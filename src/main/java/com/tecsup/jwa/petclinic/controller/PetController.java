@@ -3,12 +3,16 @@ package com.tecsup.jwa.petclinic.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+//@RestController
+@Controller
 public class PetController {
 
-	@GetMapping("welcome")
+	@GetMapping("/welcome")
 	String welcome() {
 		return "Welcome to Tecsup";
 	}
+
+
 }
