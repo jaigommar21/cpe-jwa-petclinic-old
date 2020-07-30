@@ -6,12 +6,29 @@
 
   <body>
 
+	<div>
+		<a th:href="@{~/welcome}">welcome</a>
+	</div>	
+	<div>
+		<a th:href="@{~/message}">message</a>
+	</div>
+	<div>
+		<a th:href="@{~/owners}">owners</a>
+	</div>
+	<div>
+		<a th:href="@{~/ownerInputs}">owner inputs</a>
+	</div>
+
+
     <h2 th:text="${index}"> </h2>
     <div class="row">
         <div class="col-md-12">
           <img class="img-responsive" src="../static/images/petstore.png" th:src="@{/images/petstore.png}"/>
         </div>
     </div>
+
+
+
 
   </body>
 

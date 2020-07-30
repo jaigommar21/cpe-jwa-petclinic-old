@@ -1,0 +1,43 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Data Attributes</title>
+</head>
+<body>
+<h1>List of Owners</h1>
+<article th:each="owner : ${owners}">
+    <div th:attr="data-first_name=${owner.first_name},data-last_name=${owner.last_name},data-create=${#dates.format(owner.create, 'yyyy-MM-dd')}">
+        <th:block th:text="${owner.first_name}">Owner name</th:block>
+    </div>
+</article>
+
+
+<h1>List of Owners</h1>
+<table>
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Code</th>
+        <th>Language</th>
+    </tr>
+    <tr th:each="owner, ownerStat : ${owners}" th:if="${owner.enabled}">
+        <td th:text="${ownerStat.index + 1}">1</td>
+        <td th:text="${owner.first_name}">JavaScript example</td>
+        <td th:text="${owner.last_name}">Doe</td>
+        <td th:text="${owner.city}">alert('test');</td>
+        <td th:text="${owner.adress}">javascript</td>
+    </tr>
+</table>
+
+<div th:each="owner : ${owners}">
+    <span th:switch="${owner.adress}">
+        <p th:case="'Av. Chimu'">Indentify</th:block></p>
+        <p th:case="*">Unknown adress</p>
+    </span>
+</div>
+
+
+
+</body>
+</html>
